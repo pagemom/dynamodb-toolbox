@@ -839,7 +839,8 @@ class Table {
       if (
         item
         && item.Table 
-        && item.Table.constructor.name === 'Table'
+        // !!!!! This test was failing for me with valid Table. Why? Is there a better test?
+        // && item.Table.constructor.name === 'Table'
         && item.Key
         && typeof item.Key === 'object'
         && !Array.isArray(item.Key)
