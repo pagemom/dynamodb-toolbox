@@ -479,7 +479,7 @@ class Entity {
 
     // Check for required fields
     Object.keys(required).forEach(field =>
-      required[field] && !data[field]
+      required[field] && !data[field] && data[field] !== 0
         && error(`'${field}${this.schema.attributes[field].alias ? `/${this.schema.attributes[field].alias}` : ''}' is a required field`)
     ) // end required field check
     
@@ -775,7 +775,7 @@ class Entity {
 
     // Check for required fields
     Object.keys(required).forEach(field => 
-      required[field] !== undefined && !data[field] 
+      required[field] !== undefined && !data[field] && data[field] !== 0
         && error(`'${field}${this.schema.attributes[field].alias ? `/${this.schema.attributes[field].alias}` : ''}' is a required field`)
     ) // end required field check
 
